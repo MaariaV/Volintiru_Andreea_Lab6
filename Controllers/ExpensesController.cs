@@ -22,16 +22,16 @@ namespace Volintiru_Andreea_Lab6.Controllers
 
         // GET: api/Expenses
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Expense>>> GetExpense()
+        public async Task<ActionResult<IEnumerable<ExpenseDTO>>> GetExpense()
         {
-            return await _context.Expense.ToListAsync();
+            return await _context.ExpenseDTO.ToListAsync();
         }
 
         // GET: api/Expenses/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Expense>> GetExpense(int id)
+        public async Task<ActionResult<ExpenseDTO>> GetExpense(int id)
         {
-            var expense = await _context.Expense.FindAsync(id);
+            var expense = await _context.ExpenseDTO.FindAsync(id);
 
             if (expense == null)
             {
